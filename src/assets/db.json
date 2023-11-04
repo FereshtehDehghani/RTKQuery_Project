@@ -5,6 +5,12 @@
  "body":"random post1",
  "useId":66,
  "id":1
+        },
+         {
+ "title":"post2",
+ "body":"random post2",
+ "useId":66,
+ "id":2
         }
        
     ]
