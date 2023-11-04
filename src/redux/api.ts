@@ -6,8 +6,17 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
         baseUrl:"http://localhostt:3000/"
     }),
     endpoints: (builder) => ({
-       getPosts:builder.query<Post[],string>({query:()=>"posts"}) 
+        getPosts: builder.query<Post[], string>({ query: () => "posts" }),
+        newPost: builder.mutation<Post, Post>({
+            query: (post) => ({
+                   url: "posts",
+                    method: "POST",
+                   body:post
+            }),
+               
+       }),
+        
     })
  })
 
-export const { useGetPostsQuery } = myApi.endpoints;
+export const { useGetPostsQuery,useNewPostMutation } = myApi.endpoints;
